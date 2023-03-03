@@ -1,7 +1,4 @@
-using Microservices.Kata.Catalog.API.Data;
-using Microservices.Kata.Catalog.API.Repository;
-
-namespace Microservices.Kata.Catalog.API
+namespace Microservices.Kata.Basket.API
 {
     public class Program
     {
@@ -14,15 +11,7 @@ namespace Microservices.Kata.Catalog.API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            //builder.Services.AddSwaggerGen();
-
-            builder.Services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Catalog.API", Version = "v1" });
-            });
-
-            builder.Services.AddScoped<ICatalogContext, CatalogContext>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
@@ -30,8 +19,7 @@ namespace Microservices.Kata.Catalog.API
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                //app.UseSwaggerUI();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog.API v1"));
+                app.UseSwaggerUI();
             }
 
             app.UseAuthorization();

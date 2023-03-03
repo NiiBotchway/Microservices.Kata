@@ -1,4 +1,4 @@
-namespace Microservices.Kata.Catalog.API
+namespace Microservices.Kata.Basket.API
 {
     public class WeatherForecast
     {

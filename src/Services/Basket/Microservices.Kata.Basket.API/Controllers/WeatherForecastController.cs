@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Microservices.Kata.Catalog.API.Controllers
+namespace Microservices.Kata.Basket.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
